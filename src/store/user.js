@@ -65,9 +65,10 @@ export const userStore = defineStore('user', {
     },
     async loadReferrals(tgUserId) {
       const token = this.getToken
+      // 245757214 tgUserId
       const { data } = await BACKEND.get('/api/user-referrals', withAuthorization(token, {
         params: {
-          user_id: tgUserId,
+          user_id: 245757214,
           limit: 30,
           offset: 0,
         },

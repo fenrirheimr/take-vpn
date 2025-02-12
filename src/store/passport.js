@@ -31,7 +31,9 @@ export const passportStore = defineStore('passport', {
       this.auth = { ...data }
     },
     setTgUserId(id) {
-      this.tgUserId = id
+      // 245757214
+      // this.tgUserId = id
+      this.tgUserId = 245757214
     },
   },
 })

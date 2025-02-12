@@ -19,6 +19,8 @@ import ActionButton from "@/components/ActionButton.vue";
 import Tabs from "@/components/Tabs.vue";
 import ToggleSwitch from "@/components/ToggleSwitch.vue";
 
+import GoBackButton from "@/components/GoBackButton.vue";
+
 import VueSelect from "vue3-select-component";
 const selected = ref("");
 
@@ -188,6 +190,7 @@ const switchValue = ref(true);
 
 <template>
   <section>
+    <GoBackButton />
     <div class="user">
       <div class="avatar"></div>
       <div class="user-info">
@@ -239,7 +242,7 @@ const switchValue = ref(true);
         <div class="block-title">Все тарифы</div>
         <Tabs :tabs="tabs">
           <template v-slot:tab2>
-            <div class="block-content tab-content" style="padding: 10px 0">
+            <div class="block-content tab-content">
               <div class="left">
                 <div class="content-title">Take Premium</div>
                 <div class="additional">
@@ -257,7 +260,7 @@ const switchValue = ref(true);
             </div>
           </template>
           <template v-slot:tab1>
-            <div class="block-content tab-content" style="padding: 10px 0">
+            <div class="block-content tab-content">
               <div class="left">
                 <div class="content-title">Take Free</div>
                 <div class="additional">
@@ -282,9 +285,7 @@ const switchValue = ref(true);
           Приглашайте друзей и выполняйте задания, чтобы получить бонусы,
           которыми можно оплатить подписку
         </div>
-        <div class="button" @click="router.push({ path: '/referal' })">
-          Получить бонус
-        </div>
+        <div class="button">Получить бонус</div>
       </div>
 
       <div class="content-block">

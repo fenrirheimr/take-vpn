@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
-import FriendsPage from '../pages/FriendsPage.vue'
+import ReferalPage from '../pages/ReferalPage.vue'
+import CoinPage from '../pages/CoinPage.vue'
 import BalancesPage from '../pages/BalancesPage.vue'
 
 const routes = [
@@ -15,19 +16,19 @@ const routes = [
     },
   },
   {
-    path: '/friends',
-    name: 'friends',
-    component: FriendsPage,
+    path: '/referal',
+    name: 'referal',
+    component: ReferalPage,
     meta: {
-      title: 'Друзья',
+      title: 'Рефералка',
     },
   },
   {
-    path: '/balances',
-    name: 'balances',
-    component: BalancesPage,
+    path: '/coins',
+    name: 'coins',
+    component: CoinPage,
     meta: {
-      title: 'Балансы',
+      title: 'Монетки',
     },
   },
 ]
