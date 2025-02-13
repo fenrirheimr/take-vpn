@@ -237,30 +237,34 @@ const switchValue = ref(true);
 
       <div class="content-block slider-wrapper">
         <div class="block-title">Как работает реферальная программа?</div>
-        <div class="slider">
-          <div class="content-block slider-content">
-            <div class="num">1</div>
-            <div class="block-title">Поделитесь своей реферальной ссылкой</div>
-            <div class="block-content">
-              Скопируйте реферальную ссылку в вашем профиле. Отправьте её
-              друзьям или нажмите кнопку "Пригласить друга", чтобы поделиться
-              напрямую.
+        <div class="wrapper">
+          <div class="slider">
+            <div class="content-block slider-content">
+              <div class="num">1</div>
+              <div class="block-title">
+                Поделитесь своей реферальной ссылкой
+              </div>
+              <div class="block-content">
+                Скопируйте реферальную ссылку в вашем профиле. Отправьте её
+                друзьям или нажмите кнопку "Пригласить друга", чтобы поделиться
+                напрямую.
+              </div>
             </div>
-          </div>
-          <div class="content-block slider-content">
-            <div class="num">2</div>
-            <div class="block-title">Ваши друзья получат бонусы</div>
-            <div class="block-content">
-              При регистрации по вашей ссылке друзья сразу получат бонус в
-              размере 100 ₽ на свой аккаунт.
+            <div class="content-block slider-content">
+              <div class="num">2</div>
+              <div class="block-title">Ваши друзья получат бонусы</div>
+              <div class="block-content">
+                При регистрации по вашей ссылке друзья сразу получат бонус в
+                размере 100 ₽ на свой аккаунт.
+              </div>
             </div>
-          </div>
-          <div class="content-block slider-content">
-            <div class="num">3</div>
-            <div class="block-title">Получайте бонусы за приглашение</div>
-            <div class="block-content">
-              После того как ваши друзья активируют аккаунт и совершат первую
-              покупку, вы получите вознаграждение на свой счёт.
+            <div class="content-block slider-content">
+              <div class="num">3</div>
+              <div class="block-title">Получайте бонусы за приглашение</div>
+              <div class="block-content">
+                После того как ваши друзья активируют аккаунт и совершат первую
+                покупку, вы получите вознаграждение на свой счёт.
+              </div>
             </div>
           </div>
         </div>
@@ -491,16 +495,12 @@ section {
       &.slider-wrapper {
         // background: red;
         // overflow: hidden;
-        overflow-y: scroll;
-        gap: 15px;
         margin-left: -18px;
         margin-right: -18px;
+        gap: 15px;
         min-width: 100vw;
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        // overflow: hidden;
+
         & > .block-title {
           @include font-style(
             $font-size: 16px,
@@ -509,11 +509,25 @@ section {
           );
           margin-left: 18px;
         }
+        .wrapper {
+          // padding: 0 18px;
+          // overflow: hidden;
+          width: auto;
+
+          width: 100vw;
+        }
         .slider {
           @include flex(row, flex-start, flex-start);
           gap: 5px;
+          min-width: 100vw;
+          width: auto !important;
+          overflow-y: scroll;
           padding: 0 18px;
-          overflow: hidden;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
           .slider-content {
             @include flex(column, space-between, flex-start);
             background: #1f2025;
@@ -521,7 +535,7 @@ section {
             padding: 10px 15px;
             min-height: 67px;
             gap: 5px;
-            width: 160px;
+            min-width: 160px;
             .block-content {
               @include font-style(
                 $font-size: 8px,
