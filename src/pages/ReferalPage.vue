@@ -191,141 +191,100 @@ const switchValue = ref(true);
 <template>
   <section>
     <GoBackButton />
-    <div class="user">
-      <div class="avatar"></div>
-      <div class="user-info">
-        <div class="name">Ярослав</div>
-        <div class="id">ID: 000001</div>
-      </div>
+
+    <div class="ref-block">
+      <div class="caption">Реферальная программа</div>
+      <div class="title large white">100₽ вам, 100₽ другу!</div>
+      <div class="description">начисления идут в игровой валюте TakeCoin</div>
     </div>
 
     <div class="content-wrapper">
-      <div class="content-block">
-        <div class="block-title">Ваш тариф:</div>
-        <div class="block-content">
-          <div class="left">
-            <div class="content-title">Take Free</div>
-            <div class="additional">
-              <div>Активен до: --.--.----</div>
-              <div class="error">Остаток дней: 0 дней</div>
-            </div>
+      <div class="block-wrapper">
+        <div class="content-block">
+          <div class="block-title">Приглашено друзей</div>
+          <div class="block-content" style="justify-content: center">
+            <div class="large white">1</div>
+            &nbsp;
+            <div class="take-coin" style="width: 20px; height: 20px"></div>
           </div>
-          <div class="right">
-            <action-button title="Выбрать тариф" @click="toggleModal()" />
+        </div>
+        <div class="content-block">
+          <div class="block-title">
+            Заработно бонусов с приглашенных друзей в ВПН
+          </div>
+          <div class="block-content" style="justify-content: center">
+            <div class="large white">150</div>
+            &nbsp;
+            <div class="take-coin" style="width: 20px; height: 20px"></div>
           </div>
         </div>
       </div>
       <div class="content-block">
-        <div class="block-title">Страна подключения</div>
-        <VueSelect
-          v-model="selected"
-          :options="[
-            { label: 'Нидерланды', value: 'option_1' },
-            { label: 'ОАЭ', value: 'option_2' },
-            { label: 'США', value: 'option_3' },
-            { label: 'Аргентина', value: 'option_4' },
-          ]"
-          placeholder="Выберете страну"
-        >
-          <template #value="{ option }">
-            <div class="custom-value">
-              <img
-                :src="`https://flagsapi.com/${option.value.toUpperCase()}/flat/24.png`"
-                class="block w-6 h-auto"
-              />
-              <span>{{ option.label }}</span>
-            </div>
-          </template>
-        </VueSelect>
+        <div class="block-title">Доступно бонусов</div>
+        <div class="block-content" style="justify-content: center">
+          <div class="large white">150</div>
+          &nbsp;
+          <div class="take-coin" style="width: 20px; height: 20px"></div>
+        </div>
       </div>
       <div class="content-block">
-        <div class="block-title">Все тарифы</div>
-        <Tabs :tabs="tabs">
-          <template v-slot:tab2>
-            <div class="block-content tab-content">
-              <div class="left">
-                <div class="content-title">Take Premium</div>
-                <div class="additional">
-                  <div>
-                    Пользуйтесь высокой скорость с VPN без ограничений и рекламы
-                  </div>
-                </div>
-              </div>
-              <div class="right">
-                <action-button title="Подключить" />
-                <div class="additional" style="margin-top: 10px">
-                  <div>от <span class="big">249₽</span>/30 дней </div>
-                </div>
-              </div>
-            </div>
-          </template>
-          <template v-slot:tab1>
-            <div class="block-content tab-content">
-              <div class="left">
-                <div class="content-title">Take Free</div>
-                <div class="additional">
-                  <div>Бесплатный тариф на 30 дней первым пользователям.</div>
-                </div>
-                <div class="alert">
-                  <alert :width="15" :height="15" /> Пробный период нельзя
-                  подключить повторно.
-                </div>
-              </div>
-              <div class="right">
-                <action-button title="Подключить" />
-              </div>
-            </div>
-          </template>
-        </Tabs>
+        <div class="block-title">Ссылка для друга</div>
+        <div class="block-content">
+          <div class="text">https://исходная_ссылка.ru</div>
+          <div class="copy-icon"></div>
+        </div>
       </div>
 
-      <div class="banner">
-        <div class="title">100₽ вам, 100₽ другу!</div>
-        <div class="text">
-          Приглашайте друзей и выполняйте задания, чтобы получить бонусы,
-          которыми можно оплатить подписку
+      <div class="content-block slider-wrapper">
+        <div class="block-title">Как работает реферальная программа?</div>
+        <div class="slider">
+          <div class="content-block slider-content">
+            <div class="num">1</div>
+            <div class="block-title">Поделитесь своей реферальной ссылкой</div>
+            <div class="block-content">
+              Скопируйте реферальную ссылку в вашем профиле. Отправьте её
+              друзьям или нажмите кнопку "Пригласить друга", чтобы поделиться
+              напрямую.
+            </div>
+          </div>
+          <div class="content-block slider-content">
+            <div class="num">2</div>
+            <div class="block-title">Ваши друзья получат бонусы</div>
+            <div class="block-content">
+              При регистрации по вашей ссылке друзья сразу получат бонус в
+              размере 100 ₽ на свой аккаунт.
+            </div>
+          </div>
+          <div class="content-block slider-content">
+            <div class="num">3</div>
+            <div class="block-title">Получайте бонусы за приглашение</div>
+            <div class="block-content">
+              После того как ваши друзья активируют аккаунт и совершат первую
+              покупку, вы получите вознаграждение на свой счёт.
+            </div>
+          </div>
         </div>
-        <div class="button">Получить бонус</div>
       </div>
 
       <div class="content-block">
-        <div class="block-title">Баланс бонусов</div>
-        <div class="block-content">
-          <div class="take-coin"></div>
-          <div class="left">
-            <div class="content-title">1500 TakeCoin</div>
-            <div class="additional">
-              <div>Баланс - 15 ₽</div>
-            </div>
-          </div>
-          <div class="right" style="margin-left: auto">
-            <action-button title="Потратить" color="#fff" />
-          </div>
-        </div>
-      </div>
-      <div class="content-block">
-        <div class="block-title">Финансы</div>
+        <div class="block-title">Дополнительные бонусы</div>
         <div class="block-content col">
           <div class="f-item">
-            <div class="title">Автоплатежи</div>
-            <toggle-switch v-model="switchValue" />
+            <div class="title">Подписаться на наш Telegram</div>
+            <div class="large white" style="margin-left: auto">150</div>
+            &nbsp;
+            <div class="take-coin" style="width: 20px; height: 20px"></div>
           </div>
           <div class="hdivider"></div>
-          <div class="f-item">
-            <div class="title">История покупок</div>
-          </div>
-        </div>
-        ``
-      </div>
-      <div class="content-block">
-        <div class="block-title">Поддержка</div>
-        <div class="block-content clear col">
-          <action-button title="Задать вопрос в поддержке" color="#fff" />
-          <div class="additional light center">
-            <div>Отвечаем с 9:00 до 20:00 по МСК</div>
+          <div class="f-item" style="justify-content: space-between">
+            <div class="title">Пригласить 10 друзей</div>
+            <div class="large white" style="margin-left: auto" s>150</div>
+            &nbsp;
+            <div class="take-coin" style="width: 20px; height: 20px"></div>
           </div>
         </div>
       </div>
+
       <div class="content-block">
         <div class="extermal-link">Политика конфиденциальности</div>
       </div>
@@ -367,40 +326,38 @@ section {
   overflow-y: auto !important;
   margin: 0 auto;
 
-  .user {
-    @include flex(row, flex-start, center);
+  .ref-block {
+    @include flex(column, center, center);
     width: 100%;
-    background: #1f2025;
-    border-radius: 17px;
-    padding: 10px 20px;
-    gap: 10px;
-    .avatar {
-      width: 55px;
-      height: 55px;
-      background: #fff;
-      border-radius: 50%;
+    gap: 5px;
+    margin-bottom: 10px;
+    .caption {
+      @include font-style($font-size: 12px, $font-weight: 500, $color: #89898a);
     }
-    .user-info {
-      @include flex(column, flex-start, flex-start);
-      gap: 8px;
-      .name {
-        @include font-style($font-size: 16px, $font-weight: 600, $color: #fff);
-      }
-      .id {
-        @include font-style(
-          $font-size: 12px,
-          $font-weight: 500,
-          $color: rgba(255, 255, 255, 0.5)
-        );
-        text-transform: uppercase;
-      }
+    .description {
+      @include font-style($font-size: 8px, $font-weight: 500, $color: #89898a);
     }
+  }
+
+  .large {
+    @include font-style($font-size: 20px, $font-weight: 700);
+  }
+  .white {
+    color: #fff;
   }
 
   .content-wrapper {
     @include flex(column, flex-start, flex-start);
     width: 100%;
     gap: 15px;
+    .block-wrapper {
+      @include flex(row, space-between, flex-end);
+      width: 100%;
+      gap: 5px;
+      & > .content-block {
+        width: 50%;
+      }
+    }
     .content-block {
       @include flex(column, flex-start, flex-start);
       width: 100%;
@@ -430,7 +387,15 @@ section {
         background: #1f2025;
         border-radius: 17px;
         padding: 10px 15px;
+        min-height: 67px;
         gap: 10px;
+        .text {
+          @include font-style(
+            $font-size: 20px,
+            $font-weight: 500,
+            $color: #fff
+          );
+        }
         &.clear {
           background: none;
           padding: 10px 0;
@@ -523,32 +488,71 @@ section {
         .right {
         }
       }
-    }
+      &.slider-wrapper {
+        // background: red;
+        // overflow: hidden;
+        overflow-y: scroll;
+        gap: 15px;
+        margin-left: -18px;
+        margin-right: -18px;
+        min-width: 100vw;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        & > .block-title {
+          @include font-style(
+            $font-size: 16px,
+            $font-weight: 500,
+            $color: #fff
+          );
+          margin-left: 18px;
+        }
+        .slider {
+          @include flex(row, flex-start, flex-start);
+          gap: 5px;
+          padding: 0 18px;
+          overflow: hidden;
+          .slider-content {
+            @include flex(column, space-between, flex-start);
+            background: #1f2025;
+            border-radius: 17px;
+            padding: 10px 15px;
+            min-height: 67px;
+            gap: 5px;
+            width: 160px;
+            .block-content {
+              @include font-style(
+                $font-size: 8px,
+                $font-weight: 500,
+                $color: #8f8f92
+              );
+              background: none;
+              padding: 0;
+            }
+            .block-title {
+              @include font-style(
+                $font-size: 12px,
+                $font-weight: 500,
+                $color: #fff
+              );
+            }
 
-    .banner {
-      @include flex(column, flex-start, flex-start);
-      width: 100%;
-      background: linear-gradient(277.47deg, #84f000 0%, #10d751 67%);
-      border-radius: 17px;
-      padding: 10px 20px;
-      gap: 15px;
-      .title {
-        @include font-style($font-size: 20px, $font-weight: 700, $color: #fff);
-      }
-      .text {
-        @include font-style(
-          $font-size: 10px,
-          $font-weight: 500,
-          $color: #d2f7de
-        );
-      }
-      .button {
-        @include font-style($font-size: 10px, $font-weight: 500, $color: #fff);
-        border: 1px solid #fff;
-        border-radius: 999px;
-        padding: 10px 20px;
-        cursor: pointer;
-        user-select: none;
+            .num {
+              @include flex(row, center, center);
+              @include font-style(
+                $font-size: 10px,
+                $font-weight: 700,
+                $color: #fff
+              );
+              width: 18px;
+              height: 18px;
+              background: #3f4149;
+              border-radius: 50%;
+            }
+          }
+        }
       }
     }
 
@@ -556,6 +560,7 @@ section {
       width: 49px;
       height: 49px;
       background-image: url("@/assets/img/take-coin.svg");
+      background-size: cover;
     }
   }
 

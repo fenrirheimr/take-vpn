@@ -314,7 +314,6 @@ const switchValue = ref(true);
             <div class="title">История покупок</div>
           </div>
         </div>
-        ``
       </div>
       <div class="content-block">
         <div class="block-title">Поддержка</div>
