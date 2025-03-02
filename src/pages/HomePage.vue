@@ -354,7 +354,7 @@ const switchValue = ref(true);
 section {
   @include flex(column, flex-start, center);
   width: 100%;
-  max-width: 425px;
+
   min-height: 100%;
   height: 100%;
   padding: 10px 18px 35px;
